@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style Kita - Toko Fashion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Style Kita</h1>
+    <p>Tampil Gaya, Tampil Beda</p>
+  </header>
+
+  <section class="product-section">
+    <h2>Produk Pilihan</h2>
+    <div class="product-grid">
+
+      <!-- Produk 1 -->
+      <div class="product">
+       <img src="https://images.pexels.com/photos/9558761/pexels-photo-9558761.jpeg?auto=compress&cs=tinysrgb&h=300" alt="Kaos Oversize">
+        <input type="file" id="input1" accept="image/*">
+        <h3>Kaos Streetwear</h3>
+        <p>Kaos oversize dengan bahan katun premium, cocok untuk gaya santai.</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Produk 2 -->
+      <div class="product">
+        <img src="https://images.pexels.com/photos/16428734/pexels-photo-16428734.jpeg?auto=compress&cs=tinysrgb&h=300" alt="Jacket denim">
+        <input type="file" id="input2" accept="image/*">
+        <h3>Jacket denim</h3>
+        <p>Jacket Bahan denim berkualitas tinggi, nyaman dipakai, dan desain yang selalu up-to-date .</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Produk 3 -->
+      <div class="product">
+        <img src="https://images.pexels.com/photos/9461637/pexels-photo-9461637.jpeg?auto=compress&cs=tinysrgb&h=300" alt="Celana Cargo">
+        <input type="file" id="input3" accept="image/*">
+        <h3>Celana Cargo</h3>
+        <p>Celana dengan banyak kantong, gaya dan fungsional.</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Produk 4 -->
+      <div class="product">
+        <img src="https://images.pexels.com/photos/5698908/pexels-photo-5698908.jpeg?auto=compress&cs=tinysrgb&h=300" alt="Topi Trucker">
+        <input type="file" id="input4" accept="image/*">
+        <h3>Topi Trucker</h3>
+        <p>Topi dengan desain jaring belakang, cocok untuk aktivitas luar ruangan.</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Produk 5 -->
+      <div class="product">
+        <img src="https://images.pexels.com/photos/4452389/pexels-photo-4452389.jpeg?auto=compress&cs=tinysrgb&h=300" alt="Sling Bag">
+        <input type="file" id="input5" accept="image/*">
+        <h3>Tas Sling Bag</h3>
+        <p>Tas kecil kekinian untuk jalan santai atau nongkrong.</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Style Kita</p>
+  </footer>
+
+  <script>
+    // Fungsi untuk setiap input gambar
+    for (let i = 1; i <= 5; i++) {
+      const input = document.getElementById('input' + i);
+      const img = document.getElementById('img' + i);
+
+      input.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
